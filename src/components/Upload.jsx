@@ -1,40 +1,51 @@
 import { card } from "../assets";
 import styles, { layout } from "../style";
-import UploadBtn from "./UploadBtn";
-import SubmitBtn from "./SubmitBtn";
 import React, {ChangeEvent, useState} from "react";
 
 function Upload() {
   
   const [image, setImage] = useState()
-  var texts;
-/**
- * This is where we need to connect to back end.
- * 
- */
 
+  //this is to display image on webpage
   function readImg(event){
     if (event.target.files && event.target.files[0]) {
       setImage(URL.createObjectURL(event.target.files[0]));
       hide();
+      handleUpload();
       readFile();
     }
   }
-  
-/**
- * HMMMMMMM cant really read
- *
- */
 
-  function readFile() {
+  const handleUpload = async () => {
 
-    fetch('././report.txt')
-    .then((r) => {return r.text()})
-    .then(text  => {
-      texts = text;
-    }) 
-    
-  }
+    // const formData = new FormData();
+    // formData.append("file", file);
+
+    // try {
+    //   const response = await fetch("/api/upload-file", {
+    //     method: "POST",
+    //     body: formData,
+    //   });
+    //   if (response.ok) {
+    //     console.log("File uploaded successfully!");
+    //   } else {
+    //     console.error("Upload failed.");
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
+  };
+
+  const [text, setText] = useState("");
+  const readFile = async () => {
+    try {
+      const response = await fetch("./../../back-end/report.txt");
+      const text = await response.text();
+      setText(text);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
 
   function hide(){
@@ -59,8 +70,6 @@ function Upload() {
       text_uploaded.style.display="none";
     }
 
-    readFile();
-
   }
 
   return (
@@ -80,13 +89,7 @@ function Upload() {
       <div id ="img_placeholder">
         <img src={card} alt="imageplaceholder" className="w-[100%] h-[100%] max-w-md" />
       </div>
-    
-      <div className= {`flex flex-row mb-10`}>
-        <div>
-          <SubmitBtn styles={`mt-10`} />
-        </div>
-      </div>
-      
+
     </div>
 
     <div className={`${styles.flexStart} ${styles.paddingX} flex-col`}>
@@ -94,17 +97,15 @@ function Upload() {
         Results
       </h2>
 
-      <div id="text_placeholder">
-        {texts}
+      <div id="text_placeholder" >
         <p className={`${styles.paragraph} max-w-[600px] mt-5`}>
-        Sample text
+          Here is where the report will be generated!
         </p> 
       </div>
 
       <div id="text_uploaded">
-        {texts}
         <p className={`${styles.paragraph} max-w-[600px] mt-5`}>
-          in upload
+          {text}
         </p>
       </div>
       
