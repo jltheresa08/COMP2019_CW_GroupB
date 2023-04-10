@@ -1,40 +1,90 @@
 import { card } from "../assets";
 import styles, { layout } from "../style";
 import React, {ChangeEvent, useState} from "react";
+import axios from 'axios';
 
 function Upload() {
   
   const [image, setImage] = useState()
+  const [selectedFile, setSelectedFile] = useState(null);
 
-  //this is to display image on webpage
-  function readImg(event){
-    if (event.target.files && event.target.files[0]) {
-      setImage(URL.createObjectURL(event.target.files[0]));
-      hide();
-      handleUpload();
-      readFile();
-    }
-  }
-
-  const handleUpload = async () => {
-
-    // const formData = new FormData();
-    // formData.append("file", file);
-
-    // try {
-    //   const response = await fetch("/api/upload-file", {
-    //     method: "POST",
-    //     body: formData,
-    //   });
-    //   if (response.ok) {
-    //     console.log("File uploaded successfully!");
-    //   } else {
-    //     console.error("Upload failed.");
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setImage(URL.createObjectURL(event.target.files[0]));
+    hide();
   };
+
+  const handleFileUpload = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+  
+      const response = await axios.post('http://localhost:5000/api/upload', formData);
+  
+      // const imageUrl = `/static/uploads/${response.data.filename}`;
+  
+      // // display uploaded image on the webpage
+      // const img = document.createElement('img');
+      // img.src = imageUrl;
+      // document.body.appendChild(img);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+
+
+  // const [image, setImage] = useState(null);
+  // const handleFileUpload = (event) => {
+  //   const selectedFile = event.target.files[0];
+  //   setImage(URL.createObjectURL(selectedFile));
+  //   hide();
+  //   const formData = new FormData();
+  //   formData.append('image', selectedFile);
+
+  //   fetch('/uploaded', {
+  //     method: 'POST',
+  //     body: formData
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setImage(data.filename);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error:', error);
+  //     });
+
+  //     readFile();
+  // };
+  //this is to display image on webpage
+  // function readImg(event){
+  //   if (event.target.files && event.target.files[0]) {
+  //     setImage(URL.createObjectURL(event.target.files[0]));
+  //     hide();
+  //     handleUpload();
+  //     readFile();
+  //   }
+  // }
+
+  // const handleUpload = async () => {
+
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+
+  //   try {
+  //     const response = await fetch("http://localhost:3000/api/uploadfile", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+  //     if (response.ok) {
+  //       console.log("File uploaded successfully!");
+  //     } else {
+  //       console.error("Upload failed.");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   const [text, setText] = useState("");
   const readFile = async () => {
@@ -78,16 +128,21 @@ function Upload() {
     <div className={`flex ${styles.flexStart} ${styles.paddingX} flex-col items-center`}>
 
       <div className="mb-10">
-        <input type="file" onChange={readImg} className={`py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none ${styles}`}/>
+        <input type="file" accept="image/*" onChange={handleFileChange} className={`py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none ${styles}`}/>
       </div>
 
       <div id ="uploaded">
         <img src={image} alt="uploadedimage" className="w-[100%] h-[100%] max-w-md" />
-        
       </div>
 
       <div id ="img_placeholder">
         <img src={card} alt="imageplaceholder" className="w-[100%] h-[100%] max-w-md" />
+      </div>
+
+      <div className="mt-10 mb-10">
+        <button onClick={handleFileUpload} disabled={!selectedFile} className={`py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none ${styles}`}>
+          Upload
+        </button>
       </div>
 
     </div>
