@@ -20,7 +20,7 @@ function Upload() {
       formData.append('file', selectedFile);
   
       const response = await axios.post('http://localhost:5000/api/upload', formData);
-  
+      readFile();
       // const imageUrl = `/static/uploads/${response.data.filename}`;
   
       // // display uploaded image on the webpage
