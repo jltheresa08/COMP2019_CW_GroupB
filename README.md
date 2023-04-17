@@ -8,7 +8,10 @@ pip install -r requirements.txt <br />
 ```
 This will install all the packages listed in your requirements.txt file, along with their respective versions. <br />
 
-#Setting up a React and Flask project
+## troubleshooting face_recognition package
+https://stackoverflow.com/questions/52332268/pip-install-face-recognition-giving-error <br />
+
+## Setting up a React and Flask project
 
 ## How to run
 Step 1
