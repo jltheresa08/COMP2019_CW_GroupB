@@ -32,11 +32,11 @@ npm install
 Step 4 <br />
 Finally, start your React and Flask applications by running the following commands in separate terminal windows:
 
-run the following line when ur in back-end directory<br />
+run the following line in back-end directory<br />
 ```
 flask run
 ```
-run the following line when ur in front-end directory<br />
+run the following line in front-end directory<br />
 ```
 npm run dev
 ```
