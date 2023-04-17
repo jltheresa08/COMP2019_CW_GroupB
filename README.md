@@ -1,4 +1,4 @@
-## installing python requirements.txt <br />
+## Installing python requirements.txt <br />
 1)Make sure you have Python and pip installed on your machine.  <br />
 2)Navigate to the directory where your Python project is located. <br />
 3)Activate your virtual environment, if you're using one. <br />
@@ -7,9 +7,10 @@
 pip install -r requirements.txt <br />
 ```
 This will install all the packages listed in your requirements.txt file, along with their respective versions. <br />
-
-## troubleshooting face_recognition package
+<br />
+## Troubleshooting face_recognition package
 https://stackoverflow.com/questions/52332268/pip-install-face-recognition-giving-error <br />
+<br />
 
 ## Setting up a React and Flask project
 
