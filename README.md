@@ -18,6 +18,7 @@ To get started with the Flask-React application, follow these steps: <br />
 4) Navigate to the frontend directory and install the necessary dependencies for the frontend by running npm install. <br />
 5) Start the backend server by running "python app.py" in your terminal. <br />
 6) Start the frontend server by running "npm start" in a separate terminal window. <br />
+Or just follow the below instructions for more detailed information <br />
 
 
 ## Installing python requirements.txt <br />
