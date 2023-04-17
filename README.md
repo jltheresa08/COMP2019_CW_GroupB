@@ -9,6 +9,7 @@ pip install -r requirements.txt <br />
 This will install all the packages listed in your requirements.txt file, along with their respective versions. <br />
 <br />
 ## Troubleshooting face_recognition package
+Please go to the following link for help if encounter any issue with installing face_recognition package<br />
 https://stackoverflow.com/questions/52332268/pip-install-face-recognition-giving-error <br />
 <br />
 
