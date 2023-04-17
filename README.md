@@ -1,6 +1,6 @@
 ### USER MANUAL <br />
 ## Introduction
-This user manual provides instructions on how to use the Flask-React application.
+This user manual provides instructions on how to use the application.
 This application is built using Python for the backend, Flask for the API, and React for the frontend. 
 The application provides users with a platform to preform face recognition to generate a report about the subject.
 
