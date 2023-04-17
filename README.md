@@ -14,27 +14,28 @@ https://stackoverflow.com/questions/52332268/pip-install-face-recognition-giving
 ## Setting up a React and Flask project
 
 ## How to run
-Step 1
+Step 1 <br />
 ```
 npm create vite@latest
 ```
-Step 2 
+Step 2 <br />
 use the following command to get into main folder(front-end)<br />
 ```
 cd .\your_folder\
 ```
-Step 3
+Step 3<br />
 ```
 npm install
 ```
 
-Step 4
+Step 4 <br />
+Finally, start your React and Flask applications by running the following commands in separate terminal windows:
+
 run the following line when ur in back-end directory<br />
 ```
 flask run
 ```
-
-## Load website in localhost
+run the following line when ur in front-end directory<br />
 ```
 npm run dev
 ```
