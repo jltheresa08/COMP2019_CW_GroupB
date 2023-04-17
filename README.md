@@ -4,6 +4,22 @@ This user manual provides instructions on how to use the application.
 This application is built using Python for the backend, Flask for the API, and React for the frontend. 
 The application provides users with a platform to preform face recognition to generate a report about the subject.
 
+#Prerequisites
+Before using the application, make sure that you have the following software installed on your machine:
+*Python 
+*Node.js
+*npm (Node Package Manager)
+
+#Getting Started
+To get started with the Flask-React application, follow these steps: <br />
+1) Clone the repository to your local machine. <br />
+2) Navigate to the project directory. <br />
+3) Install the necessary dependencies for the backend by running pip install -r requirements.txt in your terminal. <br />
+4) Navigate to the frontend directory and install the necessary dependencies for the frontend by running npm install. <br />
+5) Start the backend server by running "python app.py" in your terminal. <br />
+6) Start the frontend server by running "npm start" in a separate terminal window. <br />
+
+
 ## Installing python requirements.txt <br />
 1)Make sure you have Python and pip installed on your machine.  <br />
 2)Navigate to the directory where your Python project is located. <br />
