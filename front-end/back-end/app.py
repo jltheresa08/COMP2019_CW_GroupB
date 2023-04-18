@@ -28,7 +28,7 @@ def upload_image():
     basedir = os.path.abspath(os.path.dirname(__file__))
     file.save(os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename))
 
-    # Switch function to warn user that the picture entered is invalid (more than 1 person/no matching person) or no faces is detected is found
+    # Switch function to warn user that the picture entered is invalid (more than 1 person/no matching person) or no faces is detected.
     switch = face_rec.revImgReport(filename)
     match switch:
         case 0:
