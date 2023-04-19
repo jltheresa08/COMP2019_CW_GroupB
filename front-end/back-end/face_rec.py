@@ -80,7 +80,7 @@ def revImgReport(filename):
     # if no face detected
     if not searchResults:
         with open('report.txt', 'w',encoding='utf=8') as fh:
-            fh.write('no face detected')
+            fh.write('No face detected.')
             fh.close()
         return 0
     # if unknown in database
