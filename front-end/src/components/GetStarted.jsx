@@ -1,7 +1,11 @@
 import styles from "../style";
 import { arrowUp } from "../assets";
 
-// Button in Hero.jsx/landing page. Leads to Upload.jsx/upload page.
+/**
+ * Button in Hero.jsx/landing page. Leads to Upload.jsx/upload page.
+ * 
+ * @returns Get Started button
+ */
 const GetStarted = () => (
   <div className={`${styles.flexCenter} w-[170px] h-[55px] bg-blue-gradient rounded-[10px] p-[2px] cursor-pointer`}>
       <div className={`${styles.flexStart} flex-row`}>

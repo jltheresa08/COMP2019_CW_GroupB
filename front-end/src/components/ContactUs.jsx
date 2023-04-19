@@ -1,6 +1,10 @@
 import styles from "../style";
 
-// Button in Help page. Leads to Nottingham's Enquiry page.
+/**
+ * Button in Help page. Leads to Nottingham's Enquiry page.
+ * 
+ * @returns Countact Us button
+ */
 const ContactUs = () => (
     <div className={`${styles.flexCenter} w-[170px] h-[55px] bg-blue-gradient rounded-[10px] p-[2px] cursor-pointer`}>
         <div className={`${styles.flexStart} flex-row`}>

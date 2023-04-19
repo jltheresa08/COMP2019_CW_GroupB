@@ -5,10 +5,18 @@ import axios from 'axios';
 
 function Upload() {
   
+  /**
+   * State variable image to update image on webpage.
+   * State variable selectedFile holds file input to be saved.
+   */
   const [image, setImage] = useState()
   const [selectedFile, setSelectedFile] = useState(null);
 
-  // This function handles the change of image on the webpage upon user upload.
+  /**
+   * This function handles the change of image on the webpage upon user selection of file.
+   * 
+   * @param {*} event 
+   */
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
     setImage(URL.createObjectURL(event.target.files[0]));
@@ -16,7 +24,10 @@ function Upload() {
     
   };
 
-  // This function saves the uploaded file into static/uploads file. and calls the function to read and display report.
+  /**
+   * This function saves the uploaded file into static/uploads file. and calls the function to read and display report.
+   * 
+   */
   const handleFileUpload = async () => {
     var loading = document.getElementById("loading");
     var text_uploaded = document.getElementById("text_uploaded");
@@ -36,7 +47,10 @@ function Upload() {
     }
   };
   
-  // This function opens report.txt and displays it on webpage.
+  /**
+   * This function opens report.txt and displays it on webpage.
+   * 
+   */
   const [text, setText] = useState("");
   const readFile = async () => {
     try {
@@ -48,7 +62,10 @@ function Upload() {
     }
   };
 
-  // This function hides all placeholder elements.
+  /**
+   * This function hides all placeholder elements.
+   * 
+   */
   function hide(){
     var img_placeholder = document.getElementById("img_placeholder");
     var text_placeholder = document.getElementById("text_placeholder");
@@ -57,7 +74,10 @@ function Upload() {
     text_placeholder.style.display= "none";
   }
 
-  // This function shows ensures all placeholder elements are in place everytime the file reloads.
+  /**
+   * This function shows ensures all placeholder elements are in place everytime the file reloads.
+   * 
+   */
   function defaultSettings(){
     var uploaded = document.getElementById("uploaded");
     var text_uploaded = document.getElementById("text_uploaded");

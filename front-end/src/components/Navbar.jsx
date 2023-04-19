@@ -4,9 +4,10 @@ import { navLinks } from "../constants";
 
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
 
-  {/*The start toggle for menu icon is false */}
+  /**
+   * State variable for menu toggle. Default is set to false/off state.
+   */
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -18,16 +19,15 @@ const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] 
-            ${active === nav.title ? "text-white" : "text-dimWhite"} 
+            className={`font-poppins font-normal cursor-pointer text-[16px] text-white
             ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-            onClick={() => setActive(nav.title)}
           >
             <a href={`${nav.link}`}>{nav.title}</a>
           </li>
         ))}
       </ul>
 
+      {/* Hamburger menu controlled by toggle variable */}
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <img
           src={toggle ? close : menu}
@@ -36,19 +36,17 @@ const Navbar = () => {
           onClick={() => setToggle((prev)=> !prev)}
         />
 
+        {/* If not in mobile size, this section (hamburger menu) would not show */}
         <div
           className={`${!toggle ? "hidden" : "flex"} 
           p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
-          {/** If not in mobile/not have enough space for nav bar, hide*/}
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] 
-                ${active === nav.title ? "text-white" : "text-dimWhite"} 
+                className={`font-poppins font-medium cursor-pointer text-[16px] text-white
                 ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => setActive(nav.title)}
               >
                 <a href={`${nav.link}`}>{nav.title}</a>
               </li>

@@ -2,7 +2,11 @@ import styles, { layout } from "../style";
 import { features } from "../constants";
 import ContactUs from "./ContactUs";
 
-// Questions in constants/index.js is read and displayed.
+/**
+ * Retrieves questions in constants/index.js and display.
+ * 
+ * @param {*} param0 
+ */
 const FeatureCard = ({ title, content, index }) => (
     <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-0" : "mb-0"} feature-card`}>
       <div className="flex-1 flex flex-col ml-3">
