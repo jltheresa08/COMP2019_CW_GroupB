@@ -22,9 +22,9 @@ Or just follow the below instructions for more detailed information <br />
 
 
 ## Installing python requirements.txt <br />
-1)Make sure you have Python and pip installed on your machine.  <br />
-2)Navigate to the directory where your Python project is located. <br />
-3)Activate your virtual environment, if you're using one. <br />
+1)Make sure you have Python ver 3.10 or above and pip installed on your machine.<br /> 
+2)If you do not have cmake, please install that too from this [link](https://cmake.org/download/).<br />
+3)Navigate to the directory where your Python project is located. <br />
 4)Run the following command to install the packages listed in your requirements file: <br />
 ```
 pip install -r requirements.txt <br />
