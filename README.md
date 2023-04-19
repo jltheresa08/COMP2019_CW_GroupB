@@ -11,7 +11,7 @@ Before using the application, make sure that you have the following software ins
 *npm (Node Package Manager)
 
 ## Getting Started
-To get started with the Flask-React application, follow these steps: <br />
+To get started with the application, follow these steps: <br />
 1) Clone the repository to your local machine. <br />
 2) Navigate to the project directory. <br />
 3) Install the necessary dependencies for the backend by running pip install -r requirements.txt in your terminal. <br />
