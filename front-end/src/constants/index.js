@@ -1,7 +1,9 @@
 import { facebook, instagram, linkedin, twitter } from "../assets";
 
 
-// Array holding objects in navigation bar
+/**
+ * Array holding all links in navigation bar
+ */
 export const navLinks = [
   {
     id: "help",
@@ -10,7 +12,9 @@ export const navLinks = [
   },
 ];
 
-// The questions in Help.jsx/help page.
+/**
+ * The questions in Help.jsx/help page.
+ */
 export const features = [
   {
     id: "feature-1",
@@ -38,7 +42,9 @@ export const features = [
   },
 ];
 
-// All links for items listed in footer.
+/**
+ * All links for items listed in footer.
+ */
 export const footerLinks = [
   {
     title: "Useful Links",
@@ -89,7 +95,9 @@ export const footerLinks = [
   },
 ];
 
-// Here are the links for social media icons at the bottom of the page.
+/**
+ * Here are the links for social media icons at the bottom of the page.
+ */
 export const socialMedia = [
   {
     id: "social-media-1",
