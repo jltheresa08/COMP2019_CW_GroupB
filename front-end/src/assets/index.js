@@ -9,7 +9,9 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 
-
+/**
+ * Exports all required images and icons.
+ */
 export {
   card,
   logo,
