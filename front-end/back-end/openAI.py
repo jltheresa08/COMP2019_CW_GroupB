@@ -1,6 +1,6 @@
 import openai
 # api key
-API_KEY = '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'
+API_KEY = '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'
 openai.api_key = API_KEY
 
 # Set up the model and prompt
