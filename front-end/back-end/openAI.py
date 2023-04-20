@@ -1,7 +1,7 @@
 import openai
+import key
 # api key
-API_KEY = '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'
-openai.api_key = API_KEY
+openai.api_key = key.API_KEY
 
 # Set up the model and prompt
 model = 'text-davinci-003'
