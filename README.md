@@ -44,7 +44,7 @@ Please go to the following [link](https://stackoverflow.com/questions/52332268/p
 
 ## Setting up a React and Flask project
 
-## How to run
+### How to run
 Step 1 <br />
 ```
 npm create vite@latest
